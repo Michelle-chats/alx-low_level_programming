@@ -2,6 +2,7 @@
 
 /**
  * Print_alphabet_x10 -> prints the lowercase alphabets
+ * @c: a character argument
  */
 
 void print_alphabet_x10(void)
