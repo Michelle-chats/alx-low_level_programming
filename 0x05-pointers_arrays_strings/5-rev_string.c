@@ -17,7 +17,7 @@ void rev_string(char *s)
 
 	for (; p_start < p_end; p_start++, p_end--)
 	{
-		tmp = 8p_end;
+		tmp = *p_end;
 		*p_end = *p_start;
 		*p_start = tmp;
 	}
