@@ -18,13 +18,13 @@ unsigned int binary_to_uint(const char *b)
 
 	while (count)
 	{
-		if (b[count - 1] != '0' && b[count -1] != '1')
+		if (b[count - 1] != '0' && b[count - 1] != '1')
 			return (0);
 
 		if (b[count - 1] == '1')
 			current += var;
 		var *= 2;
-		count --;
+		count--;
 	}
 	return (current);
 
