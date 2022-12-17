@@ -1,26 +1,23 @@
-#include "main.h"
+#include "dog.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <stddef.h>
 
 /**
- * print_binary - prints the binary equivalent of a decimal number
- * @n: number to print in binary
+ * init_dog - initializes struct dog
+ * @d: adress of struct dog
+ * @name: name of the dog
+ * @age: age of the dog
+ * @owner: the dog's owner
  */
-void print_binary(unsigned long int n)
-{
-	int i, num = 0;
-	unsigned long int current;
-
-	for (i = 63; i >= 0; i--)
+void init_dog(struct dog *d, char *name, float age, char *owner)
+{	
+	if (!d)
 	{
-		current = n >> i;
-
-		if (current & 1)
-		{
-			_putchar('i');
-			num++;
-		}
-		else if (num)
-			_putchar('0');
+		return;
 	}
-	if (!num)
-		_putchar('0');
+
+	d->name = name;
+	d->age = age;
+	d->owner = owner;
 }
