@@ -7,26 +7,27 @@
  *
  * Return: 1 on success, -1 on failure
  */
+
 int create_file(const char *filename, char *text_content)
 {
-	int fd, t, n = 0;
+	int fd, fdw, len = 0;
 
 	if (filename == NULL)
 		return (-1);
-
-	fd = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
+	fd = open(filename, O_RDWR | O_CREAT | O_TRUNC, 0600);
 	if (fd < 0)
-		return (-1);
-
-	if (text_content)
 	{
-		while (text_content[n])
-			n++;
-		t = write(fd, text_content, n);
-		if (t != n)
-			return (-1);
+		return (-1);
 	}
-
+	if (text_content == NULL)
+		return (1);
+	while (text_content[len])
+		len++;
+	fdw = write(fd, text_content, len);
+	if (fdw < 0)
+	{
+		return (-1);
+	}
 	close(fd);
-	return (1)
+	return (1);
 }
