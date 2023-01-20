@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include "main.h"
 
 /**
@@ -6,6 +7,17 @@
  * @b: A pointer to binary string
  * Return: unsigned integer converted number
  * /
+=======
+#include <stdlib.h>
+#include "holberton.h"
+
+/**
+ * binary_to_uint - converts a binary number to an unsigned int
+ * @b: pointer to string of 0 and 1 chars
+ * Return: converted number or 0 if there are characters that are not 0 or 1
+ * or b is NULL
+ */
+>>>>>>> b450bfe5e0360c66447c2fa68d62551db48ae6e4
 unsigned int binary_to_uint(const char *b)
 {
 	unsigned int base = 1, result = 0, len = 0;
