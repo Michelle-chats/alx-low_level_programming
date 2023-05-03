@@ -1,23 +1,40 @@
-#include "dog.h"
-#include <stdio.h>
 #include <stdlib.h>
-#include <stddef.h>
+#include <stdio.h>
+#include "main.h"
 
 /**
- * init_dog - initializes struct dog
- * @d: adress of struct dog
- * @name: name of the dog
- * @age: age of the dog
- * @owner: the dog's owner
- */
-void init_dog(struct dog *d, char *name, float age, char *owner)
+  * print_binary - Prints the binary representation of a number
+  * @n: The number to representing in binary
+  *
+  * Return: Nothing
+  */
+void print_binary(unsigned long int n)
 {
-	if (!d)
+	if (n == 0)
 	{
+		_putchar('0');
 		return;
 	}
 
-	d->name = name;
-	d->age = age;
-	d->owner = owner;
+	_divide(n);
 }
+
+/**
+  * _divide - ...
+  * @n: ...
+  *
+  * Return: ...
+  */
+void _divide(unsigned long int n)
+{
+	if (n < 1)
+		return;
+
+	_divide(n >> 1);
+
+	if (n & 1)
+		_putchar('1');
+	else
+		_putchar('0');
+}
+
